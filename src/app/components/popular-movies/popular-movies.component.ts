@@ -13,7 +13,6 @@ export class PopularMoviesComponent implements OnInit {
   constructor(private popularMovieService: PopularMoviesService) {}
 
   ngOnInit(): void {
-
     this.getPopularMovies(1);
   }
 
@@ -27,12 +26,7 @@ export class PopularMoviesComponent implements OnInit {
     return new Array(this.numPages);
   }
 
-  getLookImg(movie:Movie){
-
-    let id = movie.id;
-
+  getLookImg(movie: Movie) {
     return `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
   }
-
-
 }
