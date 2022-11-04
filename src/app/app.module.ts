@@ -48,6 +48,11 @@ import { NotificationDropdownComponent } from "./components/dropdowns/notificati
 import { SidebarComponent } from "./components/sidebar/sidebar.component";
 import { UserDropdownComponent } from "./components/dropdowns/user-dropdown/user-dropdown.component";
 import { ActorComponent } from './components/actor/actor.component';
+import { LoginAPIComponent } from './components/login-api/login-api.component';
+import { HttpClient, HttpClientModule } from "@angular/common/http";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FavMoviesComponent } from './components/fav-movies/fav-movies.component';
+import { ActorDetailsComponent } from './components/actor-details/actor-details.component';
 
 @NgModule({
   declarations: [
@@ -86,8 +91,11 @@ import { ActorComponent } from './components/actor/actor.component';
     LandingComponent,
     ProfileComponent,
     ActorComponent,
+    LoginAPIComponent,
+    FavMoviesComponent,
+    ActorDetailsComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

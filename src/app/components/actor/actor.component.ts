@@ -7,7 +7,14 @@ import { Actor } from 'src/app/models/interfaces/actors.interface';
   styleUrls: ['./actor.component.css']
 })
 export class ActorComponent implements OnInit {
-
+  @Input()
+  get color(): string {
+    return this._color;
+  }
+  set color(color: string) {
+    this._color = color !== "light" && color !== "dark" ? "light" : color;
+  }
+  private _color = "light";
   @Input() actor: Actor = {} as Actor;
   constructor() { }
 
