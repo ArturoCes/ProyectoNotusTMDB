@@ -50,6 +50,7 @@ import { UserDropdownComponent } from "./components/dropdowns/user-dropdown/user
 import { HttpClientModule } from "@angular/common/http";
 import { PopularMoviesComponent } from "./components/popular-movies/popular-movies.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { NgCircleProgressModule } from "ng-circle-progress";
 
 @NgModule({
   declarations: [
@@ -95,10 +96,19 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-  
+    NgCircleProgressModule.forRoot({
+      radius: 100,
+      outerStrokeWidth: 16,
+      innerStrokeWidth: 8,
+      outerStrokeColor: "#78C00",
+      innerStrokeColor: "#C7E596",
+      animationDuration: 300,
+
+    })
+
   ],
   providers: [],
   bootstrap: [AppComponent],
-  
+
 })
-export class AppModule {}
+export class AppModule { }
