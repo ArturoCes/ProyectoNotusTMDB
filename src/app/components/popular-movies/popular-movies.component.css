@@ -1,0 +1,22 @@
+
+.card div {
+
+  backface-visibility: hidden;
+  transition: 1s;
+}
+.card .front {
+  transform: perspective(500px) rotate(0deg);
+}
+.card .front {
+  transform: perspective(500px) rotateY(0deg);
+}
+.card .back {
+  transform: perspective(500px) rotateY(180deg);
+}
+
+.card:hover .front {
+  transform: perspective(500px) rotateY(180deg);
+}
+.card:hover .back {
+  transform: perspective(500px) rotateY(360deg);
+}
