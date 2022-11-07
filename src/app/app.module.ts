@@ -56,6 +56,7 @@ import { ActorDetailsComponent } from './components/actor-details/actor-details.
 import { PopularMoviesComponent } from "./components/popular-movies/popular-movies.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { NgCircleProgressModule } from "ng-circle-progress";
+import { DetailsMoviesComponent } from './components/details-movies/details-movies.component';
 import { ApprovedComponent } from './components/approved/approved.component';
 
 @NgModule({
@@ -99,7 +100,8 @@ import { ApprovedComponent } from './components/approved/approved.component';
     FavMoviesComponent,
     ActorDetailsComponent,
     PopularMoviesComponent,
-    ApprovedComponent,
+    DetailsMoviesComponent,
+    ApprovedComponent
   ],
   imports: [
     BrowserModule,
