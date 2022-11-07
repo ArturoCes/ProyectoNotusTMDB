@@ -104,7 +104,7 @@
 
         <li class="items-center">
           <a
-            [routerLink]="['/admin/settings']"
+            routerLink="/popular"
             class="text-xs uppercase py-3 font-bold block"
             routerLinkActive
             #adminSettings="routerLinkActive"
@@ -120,9 +120,10 @@
                 adminSettings.isActive ? 'opacity-75' : 'text-blueGray-300'
               "
             ></i>
-            Settings
+            Popular
           </a>
         </li>
+
 
         <li class="items-center">
           <a

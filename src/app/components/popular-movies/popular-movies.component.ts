@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Detail } from "src/app/interfaces/details-movies.interface";
 import { Movie } from "src/app/interfaces/popular-movies.interface";
 import { PopularMoviesService } from "src/app/services/popular-movies.service";
 
@@ -9,6 +10,7 @@ import { PopularMoviesService } from "src/app/services/popular-movies.service";
 })
 export class PopularMoviesComponent implements OnInit {
   movieList: Movie[] = [];
+  detailList: Detail[];
   numPages = 0;
   constructor(private popularMovieService: PopularMoviesService) {}
 
@@ -29,4 +31,5 @@ export class PopularMoviesComponent implements OnInit {
   getLookImg(movie: Movie) {
     return `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
   }
+ 
 }

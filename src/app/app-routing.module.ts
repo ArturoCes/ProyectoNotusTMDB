@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
+import { DetailsMoviesComponent } from "./components/details-movies/details-movies.component";
 import { PopularMoviesComponent } from "./components/popular-movies/popular-movies.component";
 
 // layouts
@@ -32,7 +33,6 @@ const routes: Routes = [
       { path: "tables", component: TablesComponent },
       { path: "maps", component: MapsComponent },
       { path: "", redirectTo: "dashboard", pathMatch: "full" },
-    
     ],
   },
   // auth views
@@ -50,8 +50,8 @@ const routes: Routes = [
   { path: "landing", component: LandingComponent },
   { path: "", component: IndexComponent },
   { path: "popular", component: PopularMoviesComponent },
+  { path: "details", component: DetailsMoviesComponent },
   { path: "**", redirectTo: "", pathMatch: "full" },
-
 ];
 
 @NgModule({

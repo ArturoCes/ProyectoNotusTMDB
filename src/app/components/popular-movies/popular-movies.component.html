@@ -6,7 +6,6 @@
     <div class="example-card p-4" *ngFor="let movie of movieList">
       <div class="card">
         <div class="front" style="width: 250px; height: 300px">
-
           <h1>{{ movie.name }}</h1>
           <img
             [src]="getLookImg(movie)"
@@ -14,10 +13,22 @@
             height="300px"
             onerror="this.onerror = null; this.src = 'https:/\/\cdn.pixabay.com/photo/2013/07/12/12/58/man-146638_960_720.png'"
           />
-          <circle-progress style="position: absolute; left: 10px; bottom: -70px;" [percent]="(movie.vote_average*10)" [radius]="20" [backgroundColor]="'#000000'" [titleColor]="'#FFFFFF'"
-          [titleFontSize]="'14'" [outerStrokeWidth]="4" [innerStrokeWidth]="0" [outerStrokeColor]="'#78C000'" [showSubtitle]="false"
-          [animation]="true" [unitsColor]="'#FFFFFF'" [space]="2" [animationDuration]="300"></circle-progress>
-
+          <circle-progress
+            style="position: absolute; left: 10px; bottom: -70px"
+            [percent]="movie.vote_average * 10"
+            [radius]="20"
+            [backgroundColor]="'#000000'"
+            [titleColor]="'#FFFFFF'"
+            [titleFontSize]="'14'"
+            [outerStrokeWidth]="4"
+            [innerStrokeWidth]="0"
+            [outerStrokeColor]="'#78C000'"
+            [showSubtitle]="false"
+            [animation]="true"
+            [unitsColor]="'#FFFFFF'"
+            [space]="2"
+            [animationDuration]="300"
+          ></circle-progress>
         </div>
 
         <div class="back shadow-lg p-5" style="width: 250px; height: 375px">
@@ -30,7 +41,14 @@
   </div>
 </div>
 
-<div>
+<div
+  style="
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 40px;
+  "
+>
   <span *ngFor="let in of counter(); let i = index"
     ><button (click)="getPopularMovies(i + 1)">{{ i + 1 }}</button>&nbsp;</span
   >
