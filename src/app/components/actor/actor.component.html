@@ -22,7 +22,9 @@
     class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
   >
     <i class="fas fa-circle text-emerald-500 mr-2"></i>
-    completed
+    <button style="margin: auto;" [routerLink]="['/actor-details', actor.id]">
+      DETAILS
+    </button>
   </td>
   <td
     class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
