@@ -1,0 +1,20 @@
+<div class="e">
+  <h1 style="font-size: 30px; text-align: center">Peliculas Favoritas</h1>
+  <div
+    class="container px-4 mx-auto flex flex-wrap items-center justify-between"
+  >
+    <div class="card" *ngFor="let favMovie of favMoviesList" style="margin-bottom: 30px;">
+
+        <div class="front" style="width: 250px; height: 300px">
+          <p>{{ favMovie.title }}</p>
+          <img
+            [src]="getMovieImg(favMovie)"
+            width="250px"
+            height="300px"
+            onerror="this.onerror = null; this.src = 'https:/\/\cdn.pixabay.com/photo/2013/07/12/12/58/man-146638_960_720.png'"
+          />
+
+      </div>
+    </div>
+  </div>
+</div>

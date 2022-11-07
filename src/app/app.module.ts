@@ -47,11 +47,17 @@ import { PagesDropdownComponent } from "./components/dropdowns/pages-dropdown/pa
 import { NotificationDropdownComponent } from "./components/dropdowns/notification-dropdown/notification-dropdown.component";
 import { SidebarComponent } from "./components/sidebar/sidebar.component";
 import { UserDropdownComponent } from "./components/dropdowns/user-dropdown/user-dropdown.component";
-import { HttpClientModule } from "@angular/common/http";
+import { ActorComponent } from './components/actor/actor.component';
+import { LoginAPIComponent } from './components/login-api/login-api.component';
+import { HttpClient, HttpClientModule } from "@angular/common/http";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FavMoviesComponent } from './components/fav-movies/fav-movies.component';
+import { ActorDetailsComponent } from './components/actor-details/actor-details.component';
 import { PopularMoviesComponent } from "./components/popular-movies/popular-movies.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { NgCircleProgressModule } from "ng-circle-progress";
 import { DetailsMoviesComponent } from './components/details-movies/details-movies.component';
+import { ApprovedComponent } from './components/approved/approved.component';
 
 @NgModule({
   declarations: [
@@ -89,8 +95,13 @@ import { DetailsMoviesComponent } from './components/details-movies/details-movi
     IndexComponent,
     LandingComponent,
     ProfileComponent,
+    ActorComponent,
+    LoginAPIComponent,
+    FavMoviesComponent,
+    ActorDetailsComponent,
     PopularMoviesComponent,
     DetailsMoviesComponent,
+    ApprovedComponent
   ],
   imports: [
     BrowserModule,
@@ -98,6 +109,7 @@ import { DetailsMoviesComponent } from './components/details-movies/details-movi
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
     NgCircleProgressModule.forRoot({
       radius: 100,
       outerStrokeWidth: 16,
