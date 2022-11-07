@@ -27,4 +27,8 @@ export class ActorDetailsComponent implements OnInit {
     })
   };
 
+  actorImage () {
+    return `https://image.tmdb.org/t/p/w500/${this.actor.profile_path}`
+  }
+
 }
