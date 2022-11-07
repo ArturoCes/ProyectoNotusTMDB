@@ -18,6 +18,7 @@ export class FavMoviesComponent implements OnInit {
 
     this.profileService.getProfileInfo().subscribe(res => {
       this.account_id = res.id;
+      console.log(this.account_id)
     })
 
     this.favMoviesServices.getFavMovies(this.account_id).subscribe((res)=>{
