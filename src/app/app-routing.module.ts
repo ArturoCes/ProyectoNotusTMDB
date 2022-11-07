@@ -46,11 +46,11 @@ const routes: Routes = [
     ],
   },
   // no layout views
-  { path: "profile", component: ProfileComponent },
-  { path: "landing", component: LandingComponent },
-  { path: "", component: IndexComponent },
-  { path: "popular", component: PopularMoviesComponent },
-  { path: "details", component: DetailsMoviesComponent },
+  { path: "profile", component: ProfileComponent ,pathMatch: "full"},
+  { path: "landing", component: LandingComponent ,pathMatch: "full"},
+  { path: "", component: IndexComponent ,pathMatch: "full"},
+  { path: "popular", component: PopularMoviesComponent ,pathMatch: "full"},
+  { path: "details/:id", component: DetailsMoviesComponent,pathMatch: "full" },
   { path: "**", redirectTo: "", pathMatch: "full" },
 ];
 

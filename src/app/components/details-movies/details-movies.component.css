@@ -1,0 +1,9 @@
+.centrar{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  padding:5px;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
