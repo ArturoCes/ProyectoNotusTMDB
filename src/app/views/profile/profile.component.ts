@@ -12,38 +12,27 @@ import { ProfileService } from 'src/app/services/profile.service';
 export class ProfileComponent implements OnInit {
   approved = false;
   userInfo: UserDetailsResponse = {} as UserDetailsResponse;
+  urlImg='';
   sessionId: string = '';
   constructor(
-    private profileService: ProfileService,
-    private route: ActivatedRoute,
-    private router: Router,
-    private authService: AuthService) { }
+    private profileService: ProfileService) { }
 
   ngOnInit(): void {
 
-
-    this.route.queryParams.subscribe((qParams) => {
-      const ap = qParams['approved'];
-      const rToken = qParams['request_token'];
-      this.approved = ap == 'true' ? true : false;
-
-      if (this.approved) {
-        let session = new CreateSessionDto();
-        session.request_token = rToken;
-        this.authService.createSession(session).subscribe((resp) => {
-          localStorage.setItem('session_id', resp.session_id);
-          console.log('session id: ' + resp.session_id);
-          this.profileService.getProfileInfo().subscribe(res => {
-            this.userInfo = res;
-          })
-        });
-      } else {
-        this.router.navigate(['/admin']);
+      if (localStorage.getItem('session_id')!=null){
+        this.profileService.getProfileInfo().subscribe(res => {
+          this.userInfo = res;
+        })
       }
-    });
 
 
 
+
+  }
+
+  getProfileImg():string{
+     return `https://www.themoviedb.org/t/p/w150_and_h150_face${this.userInfo.avatar.tmdb.avatar_path}`
+    // return `https://www.themoviedb.org/t/p/w32_and_h32_face/rgdfgutojw81dEs93XS11GEOWxK.png`
   }
 
 }
