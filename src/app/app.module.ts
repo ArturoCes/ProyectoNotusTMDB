@@ -53,6 +53,9 @@ import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FavMoviesComponent } from './components/fav-movies/fav-movies.component';
 import { ActorDetailsComponent } from './components/actor-details/actor-details.component';
+import { PopularMoviesComponent } from "./components/popular-movies/popular-movies.component";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { NgCircleProgressModule } from "ng-circle-progress";
 
 @NgModule({
   declarations: [
@@ -94,9 +97,28 @@ import { ActorDetailsComponent } from './components/actor-details/actor-details.
     LoginAPIComponent,
     FavMoviesComponent,
     ActorDetailsComponent,
+    PopularMoviesComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, BrowserAnimationsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    NgCircleProgressModule.forRoot({
+      radius: 100,
+      outerStrokeWidth: 16,
+      innerStrokeWidth: 8,
+      outerStrokeColor: "#78C00",
+      innerStrokeColor: "#C7E596",
+      animationDuration: 300,
+
+    })
+
+  ],
   providers: [],
   bootstrap: [AppComponent],
+
 })
-export class AppModule {}
+export class AppModule { }
