@@ -13,7 +13,7 @@ export class FavMoviesService {
 
     getFavMovies(account_id:number):Observable<FavMoviesResponse> {
       return this.http.get<FavMoviesResponse>(
-        `${environment.API_BASE}/account/${account_id}/favorite/movies?api_key=${environment.API_KEY}&session_id=${localStorage.getItem('session_id')}&language=en-US&sort_by=created_at.asc&page=1`
+        `${environment.apiBaseUrl}/account/${account_id}/favorite/movies?api_key=${environment.apiBaseUrl}&session_id=${localStorage.getItem('session_id')}&language=en-US&sort_by=created_at.asc&page=1`
       )
     }
 }

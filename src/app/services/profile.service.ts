@@ -13,7 +13,7 @@ export class ProfileService {
 
     getProfileInfo():Observable<UserDetailsResponse> {
       return this.http.get<UserDetailsResponse>(
-        `${environment.API_BASE}/account?api_key=${environment.API_KEY}&session_id=${localStorage.getItem('session_id')}`
+        `${environment.apiBaseUrl}/account?api_key=${environment.apiKey}&session_id=${localStorage.getItem('session_id')}`
       )
     }
   }

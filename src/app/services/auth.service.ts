@@ -15,7 +15,7 @@ export class AuthService {
 
   createRequestToken(): Observable<RequestTokenResponse> {
     return this.http.get<RequestTokenResponse>(
-      `${environment.API_BASE}/authentication/token/new?api_key=${environment.API_KEY}`
+      `${environment.apiBaseUrl}/authentication/token/new?api_key=${environment.apiKey}`
     );
   }
 
@@ -23,7 +23,7 @@ export class AuthService {
     sessionDto: CreateSessionDto
   ): Observable<CreateSessionResponse> {
     return this.http.post<CreateSessionResponse>(
-      `${environment.API_BASE}/authentication/session/new?api_key=${environment.API_KEY}`,
+      `${environment.apiBaseUrl}/authentication/session/new?api_key=${environment.apiKey}`,
       sessionDto
     );
   }

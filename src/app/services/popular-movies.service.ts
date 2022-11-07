@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { environment } from "src/environments/environment";
+import { rateDto } from "../interfaces/dto/rateDto";
 import { PopularMovieResponse } from "../interfaces/popular-movies.interface";
 
 @Injectable({
@@ -15,4 +16,7 @@ export class PopularMoviesService {
       `${environment.apiBaseUrl}/movie/popular?api_key=${environment.apiKey}&page=${page}`
     );
   }
+ // getRateMovie():Observable{
+//    return this.http.post<rateDto>
+  //}
 }
