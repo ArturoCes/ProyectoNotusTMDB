@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FavMoviesResponse } from 'src/app/models/interfaces/fav-movies.interface';
+import { FavMoviesResponse, Result } from 'src/app/models/interfaces/fav-movies.interface';
 import { FavMoviesService } from 'src/app/services/fav-movies.service';
 import { ProfileService } from 'src/app/services/profile.service';
 
@@ -26,4 +26,7 @@ export class FavMoviesComponent implements OnInit {
     })
   }
 
+  getMovieImg(movie: Result ) {
+    return `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
+  }
 }

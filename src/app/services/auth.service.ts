@@ -3,7 +3,9 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { CreateSessionDto } from '../models/dto/create-session.dto';
+import { DeleteSessionDto } from '../models/dto/delete-session.dto';
 import { CreateSessionResponse } from '../models/interfaces/create-session.interface';
+import { DeleteSessionResponse } from '../models/interfaces/delete-session.interface';
 import { RequestTokenResponse } from '../models/interfaces/request-token.interface';
 
 @Injectable({
@@ -28,4 +30,15 @@ export class AuthService {
     );
   }
 
+
+  deleteSession(
+    deleteSessionDto: DeleteSessionDto
+  ): Observable<DeleteSessionResponse> {
+    return this.http.request<DeleteSessionResponse>('delete',
+      `${environment.API_BASE}/authentication/session?api_key=${environment.API_KEY}`,
+      {
+        body: deleteSessionDto,
+      }
+    );
+  }
 }

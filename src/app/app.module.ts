@@ -57,6 +57,7 @@ import { PopularMoviesComponent } from "./components/popular-movies/popular-movi
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { NgCircleProgressModule } from "ng-circle-progress";
 import { DetailsMoviesComponent } from './components/details-movies/details-movies.component';
+import { ApprovedComponent } from './components/approved/approved.component';
 
 @NgModule({
   declarations: [
@@ -100,6 +101,7 @@ import { DetailsMoviesComponent } from './components/details-movies/details-movi
     ActorDetailsComponent,
     PopularMoviesComponent,
     DetailsMoviesComponent,
+    ApprovedComponent
   ],
   imports: [
     BrowserModule,
