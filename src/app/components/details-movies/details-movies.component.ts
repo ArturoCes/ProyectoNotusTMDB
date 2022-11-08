@@ -18,5 +18,6 @@ export class DetailsMoviesComponent implements OnInit {
     this.detailService.getDetailsMovie(detail.id).subscribe((resp) => {
       this.detailList = resp.results;
     });
+    
   }
 }
