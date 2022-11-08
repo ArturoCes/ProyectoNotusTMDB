@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ActorDetailsResponse } from 'src/app/interfaces/actor-details.interface';
 import { Actor, ActorsResponse } from 'src/app/models/interfaces/actors.interface';
 import { ActorService } from 'src/app/services/actor.service';
 
@@ -11,24 +12,21 @@ import { ActorService } from 'src/app/services/actor.service';
 export class ActorDetailsComponent implements OnInit {
 
   constructor(public actorService: ActorService, private route: ActivatedRoute, public router: Router) { }
-  actorId=0;
+  actorId='';
   actor:Actor = {} as Actor;
+  actorDetails:ActorDetailsResponse = {} as ActorDetailsResponse;
   actorList:Actor[] = [];
 
   ngOnInit(): void {
-    this.actorId = Number(this.route.snapshot.paramMap.get('id'));
+    this.actorId = this.route.snapshot.paramMap.get('id');
+    this.actorService.actorDetails(this.actorId).subscribe(res =>{
+      this.actorDetails = res;}
+      )
 
-    this.actorService.actorsList(1).subscribe(res =>{
-      this.actorList = res.results;
-      for (let i of this.actorList) {
-        if(i.id == this.actorId)
-        this.actor = i;
-      }
-    })
   };
 
   actorImage () {
-    return `https://image.tmdb.org/t/p/w500/${this.actor.profile_path}`
+    return `https://image.tmdb.org/t/p/w500/${this.actorDetails.profile_path}`
   }
 
 }
