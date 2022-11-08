@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { CreateSessionDto } from 'src/app/models/dto/create-session.dto';
 import { DeleteSessionDto } from 'src/app/models/dto/delete-session.dto';
 import { AuthService } from 'src/app/services/auth.service';
+import { ProfileService } from 'src/app/services/profile.service';
 
 @Component({
   selector: 'app-login-api',
@@ -14,12 +15,15 @@ export class LoginAPIComponent implements OnInit {
   approved: boolean = false;
 
 
-  constructor(private authService: AuthService,    private route: ActivatedRoute) {}
+  constructor(private authService: AuthService,    private route: ActivatedRoute, private profileService: ProfileService) {}
 
   ngOnInit(): void {
     if (localStorage.getItem('session_id') != null) {
       this.approved = true;
     }
+    this.profileService.getProfileInfo().subscribe((resp)=>{
+      localStorage.setItem('account_id', resp.id.toString());
+    })
   }
 
   requestToken() {

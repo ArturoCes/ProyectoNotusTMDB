@@ -15,6 +15,7 @@ import { RegisterComponent } from "./views/auth/register/register.component";
 // no layouts views
 import { LandingComponent } from "./views/landing/landing.component";
 import { ProfileComponent } from "./views/profile/profile.component";
+import { RateMoviesComponent } from "./components/rate-movies/rate-movies.component";
 import { TablesComponent } from "./views/admin/tables/tables.component";
 
 const routes: Routes = [
@@ -29,7 +30,7 @@ const routes: Routes = [
   { path: "details/:id", component: DetailsMoviesComponent,pathMatch: "full" },
   { path: "", component: ProfileComponent, pathMatch: 'full' },
   { path: "approved", component: ApprovedComponent },
-  { path: "actor-details/:id", component: ActorDetailsComponent},
+  { path: "actor-details/:id", component: ActorDetailsComponent },
   { path: "**", redirectTo: "", pathMatch: "full" },
 ];
 
@@ -37,4 +38,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

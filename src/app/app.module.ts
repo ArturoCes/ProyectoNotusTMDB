@@ -39,6 +39,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { NgCircleProgressModule } from "ng-circle-progress";
 import { DetailsMoviesComponent } from './components/details-movies/details-movies.component';
 import { ApprovedComponent } from './components/approved/approved.component';
+import { RateMoviesComponent } from './components/rate-movies/rate-movies.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { ApprovedComponent } from './components/approved/approved.component';
     ActorDetailsComponent,
     PopularMoviesComponent,
     DetailsMoviesComponent,
-    ApprovedComponent
+    ApprovedComponent,
+    RateMoviesComponent
   ],
   imports: [
     BrowserModule,
@@ -73,6 +75,7 @@ import { ApprovedComponent } from './components/approved/approved.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+
     NgCircleProgressModule.forRoot({
       radius: 100,
       outerStrokeWidth: 16,
