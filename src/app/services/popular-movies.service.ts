@@ -30,7 +30,7 @@ export class PopularMoviesService {
       `${environment.apiBaseUrl}/movie/${id}/rating?api_key=${environment.apiKey}&session_id=${localStorage.getItem('session_id')}`, rateDto)
   }
   getRatedMovies(): Observable<RatedMoviesResponse> {
-    return this.http.get<RatedMoviesResponse>(`${environment.apiBaseUrl}/account/${localStorage.getItem('account_id')}/rated/movies?api_key=${environment.apiKey}&session_id=${localStorage.getItem('session_id')}`)
+    return this.http.get<RatedMoviesResponse>(`${environment.apiBaseUrl}/account/${localStorage.getItem('account_id')}/rated/movies?api_key=${environment.API_KEY}&session_id=${localStorage.getItem('session_id')}`)
 
   }
 }

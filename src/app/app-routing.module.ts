@@ -24,6 +24,7 @@ const routes: Routes = [
 
   // no layout views
   {path: "tables", component: TablesComponent, pathMatch: "full"},
+  {path: "rated", component: RateMoviesComponent, pathMatch: "full"},
   { path: "profile", component: ProfileComponent ,pathMatch: "full"},
   { path: "landing", component: LandingComponent ,pathMatch: "full"},
   { path: "popular", component: PopularMoviesComponent ,pathMatch: "full"},
