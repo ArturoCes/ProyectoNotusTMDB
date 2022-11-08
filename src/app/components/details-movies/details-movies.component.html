@@ -1,35 +1,53 @@
-<div style="margin-top: 100px;"  class="container mx-auto px-4 flex flex-wrap items-center justify-content">
-<img [src]="getFilmPoster(movie.backdrop_path)">
-<div>
-  <p> <b>Título:</b> {{movie.title}}</p>
-  <p *ngIf="movie.adult"><b>Pelicula para adultos:</b> +18</p>
-  <p *ngIf="!movie.adult"><b>Pelicula para adultos:</b> No</p>
-  <p><b>Lenguaje original: </b>{{movie.original_language}}</p>
-
-  <p><b>Detalles:</b> {{movie.overview}}</p>
-  <p><b>Fecha de salida: </b>{{movie.release_date}}</p>
-
-</div>
 <div
-  style="margin-top: 200px"
-  class="container mx-auto px-4 flex flex-wrap items-center justify-between"
+  style="margin-top: 100px"
+  class="container mx-auto px-4 flex flex-wrap items-center justify-content"
 >
-  <div *ngFor="let item of detailList">
-    <div>
-      {{ item.name }}
+  <img [src]="getFilmPoster(movie.backdrop_path)" />
+  <div>
+    <p><b>Título:</b> {{ movie.title }}</p>
+    <p *ngIf="movie.adult"><b>Pelicula para adultos:</b> +18</p>
+    <p *ngIf="!movie.adult"><b>Pelicula para adultos:</b> No</p>
+    <p><b>Lenguaje original: </b>{{ movie.original_language }}</p>
 
-      <iframe
-        width="360px"
-        height="400px"
-        [src]="getUrlVideo(item)"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
+    <p><b>Detalles:</b> {{ movie.overview }}</p>
+    <p><b>Fecha de salida: </b>{{ movie.release_date }}</p>
+    <div class="row">
+      <div class="col-sm-12">
+        <ul
+          class="list-inline rating-list"
+          *ngFor="let star of stars"
+          style="display: inline-block"
+        >
+          <li
+            (click)="countStar(star)"
+            [ngClass]="{ selected: star <= selectedValue }"
+          >
+            <i class="fa fa-star"></i>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div
+    style="margin-top: 200px"
+    class="container mx-auto px-4 flex flex-wrap items-center justify-between"
+  >
+    <div *ngFor="let item of detailList">
+      <div>
+        {{ item.name }}
+
+        <iframe
+          width="360px"
+          height="400px"
+          [src]="getUrlVideo(item)"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
     </div>
 
+    <button>Valorar película</button>
   </div>
-  <button>Valorar película</button>
-</div>
 </div>

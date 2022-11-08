@@ -24,6 +24,7 @@ import { RegisterComponent } from "./views/auth/register/register.component";
 import { IndexComponent } from "./views/index/index.component";
 import { LandingComponent } from "./views/landing/landing.component";
 import { ProfileComponent } from "./views/profile/profile.component";
+import { RateMoviesComponent } from "./components/rate-movies/rate-movies.component";
 
 const routes: Routes = [
   // admin views
@@ -49,14 +50,15 @@ const routes: Routes = [
     ],
   },
   // no layout views
-  { path: "profile", component: ProfileComponent ,pathMatch: "full"},
-  { path: "landing", component: LandingComponent ,pathMatch: "full"},
-  { path: "", component: IndexComponent ,pathMatch: "full"},
-  { path: "popular", component: PopularMoviesComponent ,pathMatch: "full"},
-  { path: "details/:id", component: DetailsMoviesComponent,pathMatch: "full" },
+  { path: "profile", component: ProfileComponent, pathMatch: "full" },
+  { path: "landing", component: LandingComponent, pathMatch: "full" },
+  { path: "", component: IndexComponent, pathMatch: "full" },
+  { path: "popular", component: PopularMoviesComponent, pathMatch: "full" },
+  { path: "rated", component: RateMoviesComponent, pathMatch: "full" },
+  { path: "details/:id", component: DetailsMoviesComponent, pathMatch: "full" },
   { path: "", component: IndexComponent, pathMatch: 'full' },
   { path: "approved", component: ApprovedComponent },
-  { path: "actor-details/:id", component: ActorDetailsComponent},
+  { path: "actor-details/:id", component: ActorDetailsComponent },
   { path: "**", redirectTo: "", pathMatch: "full" },
 ];
 
@@ -64,4 +66,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

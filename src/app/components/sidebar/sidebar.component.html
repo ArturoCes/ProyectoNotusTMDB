@@ -120,13 +120,14 @@
                 adminTables.isActive ? 'opacity-75' : 'text-blueGray-300'
               "
             ></i>
+
             Tables
           </a>
         </li>
 
-        <li class="items-center">
+        <li *ngIf="mostrar!=null" class="items-center">
           <a
-            [routerLink]="['/admin/maps']"
+            [routerLink]="['/rated']"
             class="text-xs uppercase py-3 font-bold block"
             routerLinkActive
             #adminMaps="routerLinkActive"
@@ -142,7 +143,7 @@
                 adminMaps.isActive ? 'opacity-75' : 'text-blueGray-300'
               "
             ></i>
-            Maps
+            Tus valoraciones
           </a>
         </li>
       </ul>
