@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
+import { Actor } from "src/app/models/interfaces/actors.interface";
+import { ActorService } from "src/app/services/actor.service";
 
 @Component({
   selector: "app-card-table",
@@ -14,7 +16,21 @@ export class CardTableComponent implements OnInit {
   }
   private _color = "light";
 
-  constructor() {}
 
-  ngOnInit(): void {}
+
+  actorsList: Actor[] = [];
+  constructor(private actorService: ActorService) {}
+
+  ngOnInit(): void {
+    this.actorService.actorsList(1).subscribe(res =>{
+      this.actorsList = res.results;
+
+    })
+  }
+
+  actorImage (actor:Actor) {
+    return `https://image.tmdb.org/t/p/w500/${actor.profile_path}`
+  }
+
+
 }

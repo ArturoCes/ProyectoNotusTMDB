@@ -1,4 +1,33 @@
-<div *ngFor="let item of detailList">
-    {{item.name}}
-   
+<div style="margin-top: 100px;"  class="container mx-auto px-4 flex flex-wrap items-center justify-content">
+<img [src]="getFilmPoster(movie.backdrop_path)">
+<div>
+  <p> <b>Título:</b> {{movie.title}}</p>
+  <p *ngIf="movie.adult"><b>Pelicula para adultos:</b> +18</p>
+  <p *ngIf="!movie.adult"><b>Pelicula para adultos:</b> No</p>
+  <p><b>Lenguaje original: </b>{{movie.original_language}}</p>
+
+  <p><b>Detalles:</b> {{movie.overview}}</p>
+  <p><b>Fecha de salida: </b>{{movie.release_date}}</p>
+
+</div>
+<div
+  style="margin-top: 200px"
+  class="container mx-auto px-4 flex flex-wrap items-center justify-between"
+>
+  <div *ngFor="let item of detailList">
+    <div>
+      {{ item.name }}
+
+      <iframe
+        width="360px"
+        height="400px"
+        [src]="getUrlVideo(item)"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</div>
 </div>
