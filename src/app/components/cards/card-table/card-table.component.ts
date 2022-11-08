@@ -15,14 +15,14 @@ export class CardTableComponent implements OnInit {
     this._color = color !== "light" && color !== "dark" ? "light" : color;
   }
   private _color = "light";
-
+  page:number = 1;
 
 
   actorsList: Actor[] = [];
   constructor(private actorService: ActorService) {}
 
   ngOnInit(): void {
-    this.actorService.actorsList(1).subscribe(res =>{
+    this.actorService.actorsList(this.page).subscribe(res =>{
       this.actorsList = res.results;
 
     })
@@ -32,5 +32,30 @@ export class CardTableComponent implements OnInit {
     return `https://image.tmdb.org/t/p/w500/${actor.profile_path}`
   }
 
+  nextPage(){
+    this.page = this.page+1;
+    this.actorService.actorsList(this.page).subscribe(res =>{
+
+      this.actorsList = res.results;
+  })
 
 }
+backPage(){
+  if (this.page>1)
+  this.page = this.page-1;
+
+    this.actorService.actorsList(this.page).subscribe(res =>{
+
+      this.actorsList = res.results;
+  })
+  }
+
+
+}
+
+
+
+
+
+
+

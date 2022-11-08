@@ -36,7 +36,7 @@ export class ApprovedComponent implements OnInit {
           location.reload();
         });
       } else {
-        this.router.navigate(['/admin']);
+        this.router.navigate(['/popular']);
       }
     });
 

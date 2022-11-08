@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: "landing", component: LandingComponent ,pathMatch: "full"},
   { path: "popular", component: PopularMoviesComponent ,pathMatch: "full"},
   { path: "details/:id", component: DetailsMoviesComponent,pathMatch: "full" },
-  { path: "", component: ProfileComponent, pathMatch: 'full' },
+  { path: "",  redirectTo: "/popular", pathMatch: 'full' },
   { path: "approved", component: ApprovedComponent },
   { path: "actor-details/:id", component: ActorDetailsComponent },
   { path: "**", redirectTo: "", pathMatch: "full" },
