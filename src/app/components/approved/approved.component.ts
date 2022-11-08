@@ -33,7 +33,7 @@ export class ApprovedComponent implements OnInit {
           localStorage.setItem('session_id', resp.session_id);
 
           this.router.navigate(['/profile']);
-          location.reload;
+          location.reload();
         });
       } else {
         this.router.navigate(['/admin']);

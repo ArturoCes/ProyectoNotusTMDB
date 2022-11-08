@@ -5,13 +5,6 @@ import { ActorDetailsComponent } from "./components/actor-details/actor-details.
 import { ApprovedComponent } from "./components/approved/approved.component";
 import { PopularMoviesComponent } from "./components/popular-movies/popular-movies.component";
 
-
-
-
-// auth views
-import { LoginComponent } from "./views/auth/login/login.component";
-import { RegisterComponent } from "./views/auth/register/register.component";
-
 // no layouts views
 import { LandingComponent } from "./views/landing/landing.component";
 import { ProfileComponent } from "./views/profile/profile.component";
