@@ -42,6 +42,7 @@ export class LoginAPIComponent implements OnInit {
         if (resp.success) {
           localStorage.removeItem('session_id');
           this.approved = false;
+          location.reload;
         }
       });
     }
