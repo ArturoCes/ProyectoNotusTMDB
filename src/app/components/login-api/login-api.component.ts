@@ -4,6 +4,7 @@ import { CreateSessionDto } from 'src/app/models/dto/create-session.dto';
 import { DeleteSessionDto } from 'src/app/models/dto/delete-session.dto';
 import { AuthService } from 'src/app/services/auth.service';
 import { ProfileService } from 'src/app/services/profile.service';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-login-api',
@@ -30,7 +31,7 @@ export class LoginAPIComponent implements OnInit {
     this.authService.createRequestToken().subscribe((resp) => {
       this.reqToken = resp.request_token;
       console.log(this.reqToken);
-      window.location.href = `https://www.themoviedb.org/authenticate/${this.reqToken}?redirect_to=http://localhost:4200/approved`;
+      window.location.href = `https://www.themoviedb.org/authenticate/${this.reqToken}?redirect_to=${environment.urlBase}/approved`;
     });
   }
 
@@ -42,6 +43,7 @@ export class LoginAPIComponent implements OnInit {
         if (resp.success) {
           localStorage.removeItem('session_id');
           this.approved = false;
+          location.reload();
         }
       });
     }
